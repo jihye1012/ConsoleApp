@@ -9,23 +9,32 @@ namespace ConsoleApp
 {
     internal class Program
     {
+        private const int CHAR_STATE_TOTAL = 3;
+        private const int CHAR_STATE1 = 0;
+        private const int CHAR_STATE2 = 1;
+        private const int CHAR_STATE3 = 2;
+        private const int ROW = 5;
+        private const int COL = 6;
+        private const int COL_START = 1;
+        private const int COL_END = 2;
+        private const int WAIT_TIME = 1000;
         static void Main(string[] args)
         {
-            int x = 1;
-            while (x < 50)
+            int x = COL_START;
+            while (x < COL_END)
             {
                 Console.Clear();
-                Console.SetCursorPosition(x, 5);
+                Console.SetCursorPosition(x, ROW);
 
-                switch (x % 3)
+                switch (x % CHAR_STATE_TOTAL)
                 {
-                    case 0:
+                    case CHAR_STATE1:
                         Console.WriteLine("__@");
                         break;
-                    case 1:
+                    case CHAR_STATE2:
                         Console.WriteLine("_^@");
                         break;
-                    case 2:
+                    case CHAR_STATE3:
                         Console.WriteLine("^_@");
                         break;
                 }
@@ -42,7 +51,7 @@ namespace ConsoleApp
                  {
                      Console.WriteLine("^_@");
                  }*/
-                Thread.Sleep(1000);
+                Thread.Sleep(WAIT_TIME);
                 x++;
             }
         }
