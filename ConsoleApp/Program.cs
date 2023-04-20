@@ -17,8 +17,20 @@ namespace ConsoleApp
                 Console.Clear();
                 Console.SetCursorPosition(x, 5);
 
+                switch (x % 3)
+                {
+                    case 0:
+                        Console.WriteLine("__@");
+                        break;
+                    case 1:
+                        Console.WriteLine("_^@");
+                        break;
+                    case 2:
+                        Console.WriteLine("^_@");
+                        break;
+                }
 
-                 if (x % 3 == 0)
+                /* if (x % 3 == 0)
                  {
                      Console.WriteLine("__@");
                  }
@@ -29,7 +41,7 @@ namespace ConsoleApp
                  else
                  {
                      Console.WriteLine("^_@");
-                 }
+                 }*/
                 Thread.Sleep(1000);
                 x++;
             }
